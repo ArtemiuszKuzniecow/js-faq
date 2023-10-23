@@ -1,0 +1,99 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: rgb(243, 243, 243);
+  color: rgb(41, 41, 41);
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+$sidebar-color: rgb(5, 68, 104);
+$card-title-font-size: 1.75rem; 
+$card-title-font-weight: 600;
+$card-title-margin-bottom: 15px;
+$card-title-color: lighten($sidebar-color, 40%);
+$card-title-text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+$card-text-font-size: 1rem;
+$card-text-line-height: 1.6;
+$card-text-margin-bottom: 20px;
+$card-text-color: darken(adjust-hue($sidebar-color, 20deg), 5%);
+$card-text-padding: 10px;
+
+* {
+  list-style: none;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.sidebar {
+  background: $sidebar-color;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 225px;
+  height: 100%;
+  padding: 20px 0;
+  transition: all 0.5s ease;
+  overflow: auto;
+
+  &__list-item {
+    display: block;
+    padding: 13px 30px;
+    border-bottom: 1px solid #10558d;
+    color: rgb(241, 237, 237);
+    font-size: 16px;
+    position: relative;
+    cursor: pointer;
+
+    &:hover,
+    &.active {
+      color: #0c7db1;
+      background: white;
+      border-right: 2px solid $sidebar-color;
+    }
+
+    &:before {
+      display: block;
+    }
+  }
+}
+
+.answer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  margin-left: 230px;
+  padding: 20px;
+
+  &__title {
+    font-size: $card-title-font-size;
+    font-weight: $card-title-font-weight;
+    margin-bottom: $card-title-margin-bottom;
+    color: $card-title-color;
+    text-transform: uppercase;
+    text-shadow: $card-title-text-shadow;
+    letter-spacing: 1px;
+  }
+
+  &__content {
+    font-size: $card-text-font-size;
+    line-height: $card-text-line-height;
+    margin-bottom: $card-text-margin-bottom;
+    color: $card-text-color;
+    padding: $card-text-padding;
+    border: 1px solid rgba($sidebar-color, 0.1);
+    border-radius: 5px;
+    background-color: rgba($sidebar-color, 0.05);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+}
